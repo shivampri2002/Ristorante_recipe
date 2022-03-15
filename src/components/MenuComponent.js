@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DishdetailComponent from './DishdetailComponent';
 import { Card ,CardImg ,CardImgOverlay ,CardText ,CardBody ,CardTitle } from 'reactstrap';
 
 
@@ -19,16 +20,11 @@ export default function MenuComponent( {dishes} ) {
     );
   });
 
+
   function renderDish(dish){
     if(dish!=null){
       return (
-        <Card>
-          <CardImg top src={dish.image} alt={dish.name} />
-          <CardBody>
-            <CardTitle>{dish.name}</CardTitle>
-            <CardText>{dish.description}</CardText>
-          </CardBody>
-        </Card>
+        <DishdetailComponent dish={dish} />
         );
     }
     else{
@@ -43,10 +39,8 @@ export default function MenuComponent( {dishes} ) {
     <div className='row'>
         {menu}
     </div>
-    <div className="row">
-      <div className="col-12 col-md-5 m-1">
-        {renderDish(selectedDish)}
-      </div>
+    <div>
+      {renderDish(selectedDish)}
     </div>
   </div>
   );
