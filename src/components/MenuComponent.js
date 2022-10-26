@@ -10,12 +10,14 @@ export default function MenuComponent( {dishes} ) {
   const menu=dishes.map((dish) => {
     return (
       <div id={dish.id} className="col-12 col-md-5 m-1">
-        <Card onClick={()=> setSelectedDish(dish)} >
-          <CardImg width="100%" src={dish.image} alt={dish.name} />
-          <CardImgOverlay>
-            <CardTitle>{dish.name}</CardTitle>
-          </CardImgOverlay>
-        </Card>
+        <a  href="#dish_comment_detail">
+          <Card onClick={()=> setSelectedDish(dish)} >
+            <CardImg width="100%" src={dish.image} alt={dish.name} />
+            <CardImgOverlay>
+              <CardTitle>{dish.name}</CardTitle>
+            </CardImgOverlay>
+          </Card>
+        </a>
       </div>
     );
   });
